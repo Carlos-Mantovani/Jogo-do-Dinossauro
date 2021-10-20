@@ -19,6 +19,9 @@ var testarColisao = setInterval(function() {
     if(esquerdaQuadrado < 20 && esquerdaQuadrado > 0 && topoPersonagem >= 130){
         quadrado.style.animation = "none";
         quadrado.style.display = "none";
-        alert("Você perdeu");
+        personagem.style.animation = "none";
+        jogo = document.querySelector("#jogo");
+        jogo.innerHTML += "<p class='mensagem'>Você perdeu, reiniciando...<p>"
+        setTimeout(() => location.reload(),2000);
     }
 }, 10)
